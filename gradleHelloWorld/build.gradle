@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+repositories {
+    mavenCentral()
+}
+
+group='com.gradle.hello'
+version='1.0.1'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            // 声明本地仓库路径，以当前文件所处的文件夹为basePath
+            repository(url: uri('../repo'))
+        }
+    }
+}
