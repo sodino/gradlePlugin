@@ -43,4 +43,15 @@ buildscript {
 }
 
 apply plugin: 'gradle.hello'
+
+hello {
+    name "gradle plugin"
+    IDE {
+        name "AndroidStudio"
+        versionName "3.0.1"
+        versionCode 301
+    }
+}
+
+
 apply plugin: 'gradle.calc.task.time'
